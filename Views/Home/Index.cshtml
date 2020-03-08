@@ -1,0 +1,20 @@
+﻿@model IEnumerable<manualUploader.Models.UploadedTable>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h2>Welcome to manual uploader</h2>
+        <h3>Default data</h3>
+        @foreach (var t in Model)
+        {
+        <ul>
+            <li>@t.col1</li>
+            <li>@t.col2</li>
+            <li>@t.col3</li>
+            <li>@t.col4</li>
+            <li>@t.col5</li>
+        </ul>
+        }
+        <input type="file" value="Upload your file" />
+    </div>
