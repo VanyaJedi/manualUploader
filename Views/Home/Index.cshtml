@@ -5,16 +5,9 @@
 
     <div class="text-center">
         <h2>Welcome to manual uploader</h2>
-        <h3>Default data</h3>
-        @foreach (var t in Model)
-        {
-        <ul>
-            <li>@t.col1</li>
-            <li>@t.col2</li>
-            <li>@t.col3</li>
-            <li>@t.col4</li>
-            <li>@t.col5</li>
-        </ul>
-        }
-        <input type="file" value="Upload your file" />
+        <form asp-controller="Home" asp-action="SingleFile" enctype="multipart/form-data" method="post">
+            <input type="file" name="file" accept="text/plain, .csv" value="Upload your file" />
+            <button>Upload</button>
+        </form>
+        
     </div>

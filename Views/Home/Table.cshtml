@@ -1,7 +1,18 @@
-﻿@{
+﻿@model IEnumerable<manualUploader.Models.UploadedTable>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-   <h2>Uploaded data</h2>
-</div>
+    <div class="text-center">
+        <h2>Uploaded data</h2>
+        @foreach (var t in Model)
+        {
+            <ul>
+                <li>@t.col1</li>
+                <li>@t.col2</li>
+                <li>@t.col3</li>
+                <li>@t.col4</li>
+                <li>@t.col5</li>
+            </ul>
+        }
+    </div>

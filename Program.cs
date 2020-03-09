@@ -19,7 +19,7 @@ namespace manualUploader
                 try
                 {
                     var context = services.GetRequiredService<TableContext>();
-                    SampleData.Initialize(context);
+                    //SampleData.Initialize(context);
                 }
                 catch (Exception ex)
                 {

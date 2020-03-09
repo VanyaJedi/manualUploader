@@ -8,7 +8,7 @@ namespace manualUploader.Models
 {
     public class SampleData
     {
-        public static void Initialize(TableContext context)
+        /*public static void Initialize(TableContext context)
         {
             if (!context.UserTables.Any())
             {
@@ -32,6 +32,6 @@ namespace manualUploader.Models
                 );
                 context.SaveChanges();
             }
-        }
+        }*/
     }
 }
