@@ -3,29 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/style.css">
     <title>@ViewData["Title"] - manualUploader</title>
 </head>
 <body>
 
     <header class="page-header">
-        <nav class="page-header__nav">
-            <ul class="page-header__nav-list">
-                <li><a>upload file</a></li>
-                <li><a href="~/Home/table">view uploaded</a></li>
-            </ul>
-        </nav>
+        <div class="page-header__wrapper wrapper">
+            <nav class="page-header__nav">
+                <ul class="page-header__nav-list">
+                    <li><a href="~/Home/Index">upload file</a></li>
+                    <li><a href="~/Home/table/?page=1&size=20">view uploaded</a></li>
+                </ul>
+            </nav>
+            <form method="POST" action="~/Home/table/?page=1&size=20"  class="form page-header__pagination">
+                <input class="form__value" type="text" value="10"/>
+                <div>
+                    <button class="form__btn form__btn-prev">prev</button>
+                    <button class="form__btn form__btn-next">next</button>
+                </div>
+            </form>
+        </div>
     </header>
     
-    <div>
-        <main>
-            @RenderBody()
-        </main>
-    </div>
+    <main class="page-main">
+      @RenderBody()
+    </main>
 
     <footer class="page-footer">
-        <div>
-            &copy; 2020 - manualUploader - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="wrapper">
+            <div>
+                &copy; 2020 - manualUploader - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
         </div>
     </footer>
+    <script src="~/js/script.js"></script>
 </body>
 </html>

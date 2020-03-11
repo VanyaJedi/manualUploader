@@ -53,9 +53,9 @@ namespace manualUploader.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Table()
+        public IActionResult Table(int page, int size)
         {
-            return View(db.UserTables.ToList());
+            return View(db.UserTables.ToList().Skip(page*size).Take(size));
         }
     }
 }
