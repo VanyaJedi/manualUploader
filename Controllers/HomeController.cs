@@ -55,6 +55,7 @@ namespace manualUploader.Controllers
 
         public IActionResult Table(int page, int size)
         {
+            ViewBag.sizeItems = size;
             return View(db.UserTables.ToList().Skip(page*size).Take(size));
         }
     }

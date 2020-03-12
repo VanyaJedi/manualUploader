@@ -17,6 +17,11 @@ body {
     line-height: 22px;
 }
 
+.page-header {
+    background-color: #ffd74b;
+    color: #161c36;
+}
+
 .page-header__wrapper {
     display: flex;
     padding: 25px;
@@ -34,6 +39,8 @@ body {
     }
 
     .page-header__nav-list a {
+        font-weight: bold;
+        font-size: 18px;
         text-decoration: none;
     }
 
@@ -42,9 +49,16 @@ body {
 }
 
 .page-main {
-    padding: 100px;
+    padding-top: 35px;
     height: calc(100vh - 100px);
     overflow: auto; 
+}
+
+.page-main__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 .page-footer {
@@ -66,4 +80,46 @@ body {
         height: 30px;
         border: 1px solid gray;
         padding: 5px;
+    }
+
+.title {
+    display: block;
+    margin-bottom: 30px;
+    color: #1d2e5b;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.form-upload {
+    display: flex;
+    align-items: center;
+}
+
+.form-upload__label {
+    cursor: pointer;
+    background-color: #1d2e5b;
+    font-weight: bold;
+    padding: 0 20px;
+    color: #ffd74b;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    transition: .3s ease;
+    margin-right: 15px;
+}
+
+    .form__label:hover {
+        background-color: #161c36;
+        color: #ff8d30;
     }
