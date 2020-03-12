@@ -2,18 +2,15 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-    <div class="wrapper">
-        <div class="text-center">
-            <h2>Uploaded data</h2>
-            @foreach (var t in Model)
-            {
-                <ul class="table-row">
-                    <li>@t.col1</li>
-                    <li>@t.col2</li>
-                    <li>@t.col3</li>
-                    <li>@t.col4</li>
-                    <li>@t.col5</li>
-                </ul>
-            }
-        </div>
-    </div>
+ 
+   <h2 class="title">Uploaded data</h2>
+   @foreach (var t in Model)
+    {
+     <ul class="table-row">
+         <li>@t.col1</li>
+         <li>@t.col2</li>
+         <li>@t.col3</li>
+         <li>@t.col4</li>
+         <li>@t.col5</li>
+     </ul>
+    }

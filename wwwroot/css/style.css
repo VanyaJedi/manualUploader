@@ -73,6 +73,7 @@ body {
 .table-row {
     list-style: none;
     display: flex;
+    font-size: 12px;
 }
 
     .table-row li {
@@ -84,7 +85,7 @@ body {
 
 .title {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: #1d2e5b;
 }
 
@@ -123,3 +124,7 @@ body {
         background-color: #161c36;
         color: #ff8d30;
     }
+
+.form-upload__filename {
+    margin-right: 50px;
+}

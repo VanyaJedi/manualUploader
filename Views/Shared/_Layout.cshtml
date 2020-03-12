@@ -18,6 +18,7 @@
             </nav>
             <form method="POST" action="~/Home/table/?page=1&size=20" class="form page-header__pagination">
                 <span class="form__current-value">@ViewBag.sizeItems</span>
+                <span class="pages">@ViewBag.pageNum / @ViewBag.pagesCount</span>
                 <input class="form__value" list="items" autocomplete="off" />
                 <datalist id="items">
                     <option value=10 />

@@ -6,5 +6,6 @@
        <form class="form-upload" asp-controller="Home" asp-action="SingleFile" enctype="multipart/form-data" method="post">
             <input class="visually-hidden" id="file" type="file" name="file" accept="text/plain, .csv" value="Upload your file" />
             <label class="form-upload__label" for="file">Загрузить файл</label>
+            <span class="form-upload__filename">File name</span>
             <button>Upload</button>
        </form>
