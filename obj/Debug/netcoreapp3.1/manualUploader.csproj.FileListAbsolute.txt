@@ -64,3 +64,5 @@ D:\VisualStudioApps\Repos\manualUploader\bin\Debug\netcoreapp3.1\runtimes\unix\l
 D:\VisualStudioApps\Repos\manualUploader\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\VisualStudioApps\Repos\manualUploader\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\VisualStudioApps\Repos\manualUploader\obj\Debug\netcoreapp3.1\manualUploader.MvcApplicationPartsAssemblyInfo.cache
+D:\VisualStudioApps\Repos\manualUploader\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\VisualStudioApps\Repos\manualUploader\bin\Debug\netcoreapp3.1\package.json

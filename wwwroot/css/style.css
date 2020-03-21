@@ -1,130 +1,139 @@
-﻿html {
-    box-sizing: border-box;
-}
+html {
+  box-sizing: border-box; }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 body {
-    font-family: Roboto, "Arial", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 22px;
-}
+  font-family: Roboto, "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px; }
 
 .page-header {
-    background-color: #ffd74b;
-    color: #161c36;
-}
+  background-color: #ffd74b;
+  color: #161c36; }
 
 .page-header__wrapper {
-    display: flex;
-    padding: 25px;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-}
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px; }
+
 .page-header__nav-list {
-    display: flex;
-    list-style: none;
-}
-
-    .page-header__nav-list li {
-        margin-right: 20px;
-    }
-
-    .page-header__nav-list a {
-        font-weight: bold;
-        font-size: 18px;
-        text-decoration: none;
-    }
+  display: flex;
+  list-style: none; }
+  .page-header__nav-list li {
+    margin-right: 20px; }
+  .page-header__nav-list a {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none; }
 
 .page-header__pagination {
-    display: flex;
-}
+  display: flex; }
 
 .page-main {
-    padding-top: 35px;
-    height: calc(100vh - 100px);
-    overflow: auto; 
-}
+  padding-top: 35px;
+  height: calc(100vh - 100px);
+  overflow: auto; }
 
 .page-main__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; }
 
 .page-footer {
-    height: 50px;
-}
+  height: 50px; }
 
 .wrapper {
-    width: 960px;
-    margin: 0 auto;
-}
+  width: 960px;
+  margin: 0 auto; }
 
 .table-row {
-    list-style: none;
-    display: flex;
-    font-size: 12px;
-}
-
-    .table-row li {
-        width: 50px;
-        height: 30px;
-        border: 1px solid gray;
-        padding: 5px;
-    }
+  list-style: none;
+  display: flex;
+  font-size: 12px; }
+  .table-row li {
+    width: 50px;
+    height: 30px;
+    border: 1px solid gray;
+    padding: 5px; }
 
 .title {
-    display: block;
-    margin-bottom: 50px;
-    color: #1d2e5b;
-}
+  display: block;
+  margin-bottom: 50px;
+  color: #1d2e5b; }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
 
 .form-upload {
-    display: flex;
-    align-items: center;
-}
+  display: flex;
+  align-items: center; }
 
-.form-upload__label {
-    cursor: pointer;
-    background-color: #1d2e5b;
-    font-weight: bold;
-    padding: 0 20px;
-    color: #ffd74b;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    transition: .3s ease;
-    margin-right: 15px;
-}
-
-    .form__label:hover {
-        background-color: #161c36;
-        color: #ff8d30;
-    }
+.button {
+  cursor: pointer;
+  background-color: #1d2e5b;
+  font-weight: bold;
+  padding: 0 20px;
+  color: #ffd74b;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  transition: .3s ease;
+  margin-right: 15px;
+  border: none; }
+  .button:hover {
+    background-color: #161c36;
+    color: #ff8d30; }
+  .button--small {
+    height: 30px; }
+  .button--yellow {
+    color: #1d2e5b;
+    background-color: #ffd74b; }
 
 .form-upload__filename {
-    margin-right: 50px;
-}
+  margin-right: 50px; }
+
+.form__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; }
+  .form__top span {
+    margin-right: 10px; }
+
+.form__pagination {
+  display: flex;
+  align-items: center; }
+
+.form__input-radio {
+  list-style: none;
+  display: flex; }
+  .form__input-radio li {
+    width: 70px;
+    padding: 3px;
+    margin-right: 4px; }
+
+.view-setup {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px; }

@@ -2,15 +2,48 @@
 @{
     ViewData["Title"] = "Home Page";
 }
- 
-   <h2 class="title">Uploaded data</h2>
-   @foreach (var t in Model)
-    {
-     <ul class="table-row">
-         <li>@t.col1</li>
-         <li>@t.col2</li>
-         <li>@t.col3</li>
-         <li>@t.col4</li>
-         <li>@t.col5</li>
-     </ul>
-    }
+    <div class="view-setup">
+        <form method="POST" action="~/Home/table/?page=1&size=20" class="form">
+            <div class="form__top">
+                <span>Display items: </span>
+                <ul class="form__input-radio">
+                    <li>
+                        <input name="radio-size" type="radio" value="10" id="size-10" checked/>
+                        <label for="size-10"><span>10</span></label>
+                    </li>
+                    <li>
+                        <input name="radio-size" type="radio" value="20" id="size-20" />
+                        <label for="size-20"><span>20</span></label>
+                    </li>
+                    <li>
+                        <input name="radio-size" type="radio" value="50" id="size-50" />
+                        <label for="size-50"><span>50</span></label>
+                    </li>
+                    <li>
+                        <input name="radio-size" type="radio" value="100" id="size-100" />
+                        <label for="size-100"><span>100</span></label>
+                    </li>
+                </ul>
+                <button type="button" class="button button--small form__change-size">Show</button>
+            </div>
+            
+            <div class="form__pagination">
+                <span class="form__pages">Page @ViewBag.pageNum / @ViewBag.pagesCount</span>
+                <button type="button" class="button button--small form__btn form__btn-prev">prev</button>
+                <button type="button" class="button button--small form__btn form__btn-next">next</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <h2 class="title">Uploaded data</h2>
+        @foreach (var t in Model)
+        {
+            <ul class="table-row">
+                <li>@t.col1</li>
+                <li>@t.col2</li>
+                <li>@t.col3</li>
+                <li>@t.col4</li>
+                <li>@t.col5</li>
+            </ul>
+        }
+    </div>

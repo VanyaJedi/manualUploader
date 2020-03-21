@@ -16,21 +16,6 @@
                     <li><a href="~/Home/table/?page=1&size=20">view uploaded</a></li>
                 </ul>
             </nav>
-            <form method="POST" action="~/Home/table/?page=1&size=20" class="form page-header__pagination">
-                <span class="form__current-value">@ViewBag.sizeItems</span>
-                <span class="pages">@ViewBag.pageNum / @ViewBag.pagesCount</span>
-                <input class="form__value" list="items" autocomplete="off" />
-                <datalist id="items">
-                    <option value=10 />
-                    <option value=20 />
-                    <option value=50 />
-                    <option value=100 />
-                </datalist>
-                <div>
-                    <button class="form__btn form__btn-prev">prev</button>
-                    <button class="form__btn form__btn-next">next</button>
-                </div>
-            </form>
         </div>
     </header>
     

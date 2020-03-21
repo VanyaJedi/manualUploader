@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using manualUploader.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+//using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace manualUploader.Controllers
 {
@@ -57,8 +59,15 @@ namespace manualUploader.Controllers
         {
             ViewBag.sizeItems = size;
             ViewBag.pageNum = page;
-            ViewBag.pagesCount = db.UserTables.ToList().Count % size;
+            decimal pagesCount = db.UserTables.ToList().Count / size;
+            ViewBag.pagesCount = Math.Ceiling(pagesCount);
             return View(db.UserTables.ToList().Skip(page*size).Take(size));
+        }
+
+        public string RetrieveData(int page, int size)
+        {
+            var result = db.UserTables.ToList().Skip(page * size).Take(size);
+            return JsonSerializer.Serialize(result);
         }
     }
 }
