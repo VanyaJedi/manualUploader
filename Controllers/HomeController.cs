@@ -59,14 +59,16 @@ namespace manualUploader.Controllers
         {
             ViewBag.sizeItems = size;
             ViewBag.pageNum = page;
-            decimal pagesCount = db.UserTables.ToList().Count / size;
+            int skip = page - 1;
+            float pagesCount = db.UserTables.ToList().Count / (float) size;
             ViewBag.pagesCount = Math.Ceiling(pagesCount);
-            return View(db.UserTables.ToList().Skip(page*size).Take(size));
+            return View(db.UserTables.ToList().Skip(skip * size).Take(size));
         }
 
         public string RetrieveData(int page, int size)
         {
-            var result = db.UserTables.ToList().Skip(page * size).Take(size);
+            int skip = page - 1;
+            var result = db.UserTables.ToList().Skip(skip * size).Take(size);
             return JsonSerializer.Serialize(result);
         }
     }

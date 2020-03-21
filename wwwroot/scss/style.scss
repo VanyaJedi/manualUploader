@@ -67,7 +67,7 @@ body {
 }
 
 .wrapper {
-    width: 960px;
+    width: 87%;
     margin: 0 auto;
 }
 
@@ -166,6 +166,10 @@ body {
         padding: 3px;
         margin-right: 4px;
     }
+}
+
+.form__btn {
+    margin-left: 25px;
 }
 
 .view-setup {

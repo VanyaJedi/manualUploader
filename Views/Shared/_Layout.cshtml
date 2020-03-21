@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/style.css">
     <title>@ViewData["Title"] - manualUploader</title>
+    <script> let sizeItems = '@ViewBag.sizeItems ';
+        let maxPage = '@ViewBag.pagesCount';
+    </script>
 </head>
 <body>
 
@@ -13,7 +16,7 @@
             <nav class="page-header__nav">
                 <ul class="page-header__nav-list">
                     <li><a href="~/Home/Index">upload file</a></li>
-                    <li><a href="~/Home/table/?page=1&size=20">view uploaded</a></li>
+                    <li><a href="~/Home/table/?page=1&size=10">view uploaded</a></li>
                 </ul>
             </nav>
         </div>

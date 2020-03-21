@@ -1,21 +1,34 @@
 ﻿'use strict';
+
+let table = document.querySelector('.table');
+let rowTemplate = document.querySelector('#table-row-template').content.firstElementChild;
 let form = document.querySelector('.form');
 let btn = document.querySelector('.form__btn');
 let input = document.querySelector('.form__value');
 let formUpload = document.querySelector('.form-upload');
 let formInput = document.querySelector('.form-upload__input');
+let changeSizeBtn = document.querySelector('.form__change-size');
+let prevBtn = document.querySelector('.form__btn-prev');
+let nextBtn = document.querySelector('.form__btn-next');
+let radioInputs = document.querySelectorAll('.form__radio');
+let pageNum = 1;
 const URL_ACTION = 'https://localhost:44360/Home/table/?';
-const VALUE_ACCEPT = [10, 20, 50, 100];
 const RESPONSE_TYPE = 'json';
 const RESPONSE_STATUS_SUCCESS = 200;
+let activeSizeInput = sizeItems;
 
-if (input) {
-    input.addEventListener('change', function () {
-        form.setAttribute('action', URL_ACTION + 'page=1&' + 'size=' + input.value);
-        form.querySelector('.form__current-value').innerText = input.value;
-        //form.submit();
+
+let checkRightInput = function (inputs) {
+    inputs.forEach(function (input) {
+        if (parseInt(input.value, 10) == activeSizeInput) {
+            input.checked = true;
+            return;
+        }
     });
-}
+};
+
+
+checkRightInput(radioInputs);
 
 if (formInput) {
     formInput.addEventListener('change', function () {
@@ -23,11 +36,11 @@ if (formInput) {
     });
 }
 
-function checkInputValue(val) {
-    if (VALUE_ACCEPT.includes(val)) {
-        return '';     
-    }
-    return 'Введите верное значение'
+if (form) {
+    form.addEventListener('submit', function () {
+        activeSizeInput = document.querySelector('.form__radio:checked').value;
+        form.setAttribute('action', URL_ACTION + 'page=1&' + 'size=' + activeSizeInput);
+    });
 }
 
 let responseToServer = function (url, type, data, timeout, onLoad, onError) {
@@ -58,15 +71,45 @@ let responseToServer = function (url, type, data, timeout, onLoad, onError) {
     xhr.send(data || {});
 };
 
+let renderRow = function (dbRow) {
+    let rowItem = rowTemplate.cloneNode(true);
+    for (let key in dbRow) {
+        if (key === 'Id') {
+            continue;
+        }
+        let elem = document.createElement('li');
+        elem.innerText = dbRow[key];
+        rowItem.appendChild(elem);
+    };
+    return rowItem;
+};
+
 let showData = function (response) {
-    console.log(response);
+    let fragmentTable = document.createDocumentFragment();
+    table.innerHTML = '';
+    for (let i = 0; i < response.length; i++) {
+        fragmentTable.appendChild(renderRow(response[i]));
+    }
+    table.appendChild(fragmentTable);
+    document.querySelector('.form__page').innerText = pageNum;
 }
 
 let showError = function (errorMessage) {
     alert(errorMessage);
 }
 
-form.addEventListener('submit', function (evt) {
-    evt.preventDefault();
-    responseToServer('https://localhost:44360/Home/RetrieveData?page=1&size=10', 'GET', {}, 10000, showData, showError); 
+prevBtn.addEventListener('click', function () {
+    if (pageNum === 1) {
+        return;
+    } 
+    pageNum--;
+    responseToServer(`https://localhost:44360/Home/RetrieveData?page=${pageNum}&size=${activeSizeInput}`, 'GET', {}, 10000, showData, showError);
+});
+
+nextBtn.addEventListener('click', function () {
+    if (pageNum == maxPage) {
+        return;
+    }
+    pageNum++;
+    responseToServer(`https://localhost:44360/Home/RetrieveData?page=${pageNum}&size=${activeSizeInput}`, 'GET', {}, 10000, showData, showError); 
 });
