@@ -1,9 +1,6 @@
 ﻿'use strict';
 
 {
-
-    'use strict';
-
     let table = document.querySelector('.table');
     let form = document.querySelector('.form');
     let rowTemplate = document.querySelector('#table-row-template').content.firstElementChild;
