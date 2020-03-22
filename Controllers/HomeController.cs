@@ -38,10 +38,10 @@ namespace manualUploader.Controllers
                     tableData.Add(new UploadedTable
                     {
                         col1 = cols[0].ToString(),
-                        col2 = cols[0].ToString(),
-                        col3 = cols[0].ToString(),
-                        col4 = cols[0].ToString(),
-                        col5 = cols[0].ToString()
+                        col2 = cols[1].ToString(),
+                        col3 = cols[2].ToString(),
+                        col4 = cols[3].ToString(),
+                        col5 = cols[4].ToString()
                     });
                 }
             }
